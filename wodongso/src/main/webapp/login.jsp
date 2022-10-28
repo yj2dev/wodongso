@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 </head>
 <body>
-  <a href="login.do">로그인</a>
-  <a href="register.do">회원가입</a>
-  <a href="findPassword">비밀번호 찾기</a>
+	<h3>로그인</h3>
+	<form>
+		<input type="text" />
+	</form>
+	<a href="index.jsp">메인으로</a>
 </body>
 </html>
