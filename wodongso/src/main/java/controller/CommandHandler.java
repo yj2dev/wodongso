@@ -1,4 +1,4 @@
-package controller.function;
+package controller;
 
 import java.util.HashMap;
 
@@ -10,6 +10,7 @@ public class CommandHandler {
 		command.put("login", "controller.function.LoginCommand");
 		command.put("register", "controller.function.RegisterCommand");
 		command.put("findPassword", "controller.function.FindPasswordCommand");
+		command.put("societyAll", "controller.SocietyAllCommand");
 	}
 	
 	Command getCommand(String cmd) {

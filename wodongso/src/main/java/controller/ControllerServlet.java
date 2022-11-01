@@ -1,4 +1,4 @@
-package controller.function;
+package controller;
 
 import java.io.IOException;
 

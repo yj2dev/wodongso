@@ -10,5 +10,7 @@
   <a href="login.do">로그인</a>
   <a href="register.do">회원가입</a>
   <a href="findPassword">비밀번호 찾기</a>
+
+  <a href="societyAll.do">전체 콘텐츠 조회</a>
 </body>
 </html>
