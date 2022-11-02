@@ -18,15 +18,15 @@ public class SocietyAllCommand implements Command{
 	public String execute(HttpServletRequest req, HttpServletResponse res) {
 
 		Connection con = null;
-		String url = "jdbc:mysql://localhost:3306/wodongso?serverTimezone=UTC";
-		String id = "root";
-		String pw = "1114";
 		String sql = "SELECT * FROM society";
 		
 		try {
-		    Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/wodongso?serverTimezone=UTC";
+			String id = "root";
+			String pw = "1114";
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		    con = DriverManager.getConnection(url, id, pw);
-		    System.out.println("Success");
 		} catch(Exception e) { 
 		    e.printStackTrace();
 		}
@@ -79,14 +79,11 @@ public class SocietyAllCommand implements Command{
 		req.setAttribute("societyList", societyList);
 		
 		try {
-		
 			req.getRequestDispatcher("/landing.jsp").forward(req, res);
 		} catch(Exception e) { 
 		    e.printStackTrace();
 		}
-	
-		
-		
+			
 		return null;
 
 	}

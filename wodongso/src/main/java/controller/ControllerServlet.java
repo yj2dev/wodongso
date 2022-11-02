@@ -33,8 +33,13 @@ public class ControllerServlet extends HttpServlet {
 			String contextPath = req.getContextPath();
 			String cmd = requestURI.substring(contextPath.length() + 1, requestURI.indexOf(".do"));
 			System.out.println("cmd: " + cmd);
-			String nextPage = cmdHandler.getCommand(cmd).execute(req, res);
-			req.getServletContext().getRequestDispatcher(nextPage).forward(req, res);
+			String nextPage;
+			try {
+				nextPage = cmdHandler.getCommand(cmd).execute(req, res);
+				req.getServletContext().getRequestDispatcher(nextPage).forward(req, res);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 	}
 
 }

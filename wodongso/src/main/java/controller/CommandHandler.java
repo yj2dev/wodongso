@@ -7,9 +7,9 @@ public class CommandHandler {
 	HashMap<String, String> command = new HashMap<>();
 	
 	public CommandHandler() {
-		command.put("login", "controller.function.LoginCommand");
-		command.put("register", "controller.function.RegisterCommand");
-		command.put("findPassword", "controller.function.FindPasswordCommand");
+		command.put("login", "controller.LoginCommand");
+		command.put("register", "controller.RegisterCommand");
+		command.put("findPassword", "controller.FindPasswordCommand");
 		command.put("societyAll", "controller.SocietyAllCommand");
 	}
 	

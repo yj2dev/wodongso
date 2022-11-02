@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>우동소 로그인</title>
 </head>
 <body>
 	<h3>로그인</h3>
 	<form>
-		<input type="text" />
+		<input type="text" name="id"/>
+		<input type="password" name="pw"/>
 	</form>
 	<a href="index.jsp">메인으로</a>
 </body>
