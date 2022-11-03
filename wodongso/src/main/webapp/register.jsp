@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- 수정시 name 값은 수정 불가 (코멘트 확인 후 제거) -->
-	<form action="register.do" method="post" name="registerForm" onsubmit="return onClickPasswordChck();">
+	<form action="register.do" method="post" name="registerForm" onsubmit="return onClickValidate();">
         <table>
             <tr>
                 <td width="144px">아이디</td>
@@ -22,7 +22,12 @@
                     <input type="text" name="name">
                 </td>
             </tr>
-            
+            <tr>
+                <td>닉네임</td>
+                <td>
+                    <input type="text" name="nickname">
+                </td>
+            </tr>
             <tr>
                 <td>비밀번호</td>
                 <td>
@@ -74,11 +79,17 @@
                     <input type="text" name="major">
                 </td>
             </tr>
+              <tr>
+                <td>학번</td>
+                <td>
+                    <input type="text" name="classOf">
+                </td>
+            </tr>
         </table>
         <input type="submit" value="확인">
     </form>    
     <script>
-    	function onClickPasswordChck(){
+    	function onClickValidate(){
     		const pw = document.registerForm.password.value;
     		const pwCheck = document.registerForm.passwordCheck.value;
     		console.log(pw, pwCheck);

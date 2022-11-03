@@ -19,8 +19,8 @@ public class RegisterCommand implements Command {
 		req.setCharacterEncoding("UTF-8");
 		Connection con = null;
 		String sql = "INSERT INTO user"
-				+ "(id, name, password, type, profile_url, region, university, major, class_of)"
-				+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "(id, name, nickname, password, type, contact, profile_url, region, university, major, class_of)"
+				+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		String url = "jdbc:mysql://localhost:3306/wodongso?serverTimezone=UTC";
 		String id = "root";
@@ -50,14 +50,12 @@ public class RegisterCommand implements Command {
 
 	
 		System.out.println("userId >> " + userId);
-		System.out.println("region" + region);
+		System.out.println("region >> " + region);
 		System.out.println("university >> " + university);
 		System.out.println("major >> " + major);
 		System.out.println("classOf >> " + classOf);
 		
 		if(!password.equals(passwordCheck)) {
-			System.out.println("비밀번호 불일치");
-			
 			PrintWriter out = res.getWriter();
 			res.setCharacterEncoding("UTF-8");
 			res.setContentType("text/html; charset=UTF-8");
@@ -76,18 +74,17 @@ public class RegisterCommand implements Command {
 		
 		System.out.println(user.toString());
 		 
-		
-		
 		stmt.setString(1, user.getId());
 		stmt.setString(2, user.getName());
-		stmt.setString(3, user.getPassword());
-		stmt.setInt(4, user.getType());
-		stmt.setString(5, user.getProfile_url());
-		stmt.setString(6, user.getRegion());
-		stmt.setString(7, user.getUniversity());
-		stmt.setString(8, user.getMajor());
-		stmt.setString(9, user.getClassOf());
-		
+		stmt.setString(3, user.getNickname());
+		stmt.setString(4, user.getPassword());
+		stmt.setInt(5, user.getType());
+		stmt.setString(6, user.getContact());
+		stmt.setString(7, user.getProfile_url());
+		stmt.setString(8, user.getRegion());
+		stmt.setString(9, user.getUniversity());
+		stmt.setString(10, user.getMajor());
+		stmt.setString(11, user.getClassOf());		
 		
 		int result = stmt.executeUpdate();
 		System.out.println("result >> " + result);
