@@ -26,13 +26,11 @@ public class RegisterCommand implements Command {
 		String id = "root";
 		String pw = "1114";
 	
-		System.out.println("sql >> " + sql);
-
 		Class.forName("com.mysql.cj.jdbc.Driver");
 	    con = DriverManager.getConnection(url, id, pw);
 	
 		PreparedStatement stmt = con.prepareStatement(sql);
-		ResultSet rs = null;
+	
 
 		
 		String userId = (String) req.getParameter("id");
@@ -48,28 +46,6 @@ public class RegisterCommand implements Command {
 		String major = (String) req.getParameter("major");
 		String classOf = (String) req.getParameter("classOf");
 
-	
-		System.out.println("userId >> " + userId);
-		System.out.println("region >> " + region);
-		System.out.println("university >> " + university);
-		System.out.println("major >> " + major);
-		System.out.println("classOf >> " + classOf);
-		
-		if(!password.equals(passwordCheck)) {
-			PrintWriter out = res.getWriter();
-			res.setCharacterEncoding("UTF-8");
-			res.setContentType("text/html; charset=UTF-8");
-			
-			out.write("<h3>check password</h3>");
-//			out.write("<script>alert('plz check pw...');</script>");
-			
-//			req.getRequestDispatcher("/register.jsp").forward(req, res);
-			
-		} else {
-			System.out.println("비밀번호 일치");
-			req.getRequestDispatcher("/index.jsp").forward(req, res);
-		}
-	
 		User user = new User(userId, name, nickname, password, type, contact, profile_url, region, university, major, classOf);
 		
 		System.out.println(user.toString());
@@ -86,18 +62,11 @@ public class RegisterCommand implements Command {
 		stmt.setString(10, user.getMajor());
 		stmt.setString(11, user.getClassOf());		
 		
-		int result = stmt.executeUpdate();
-		System.out.println("result >> " + result);
-		
+		int rs = stmt.executeUpdate();
+		System.out.println("result >> " + rs);
 		
 		stmt.close();
-//		rs.close();
 		con.close();
-		
-		
-//		PrintWriter out = res.getWriter();
-//		out.prinln();
-		
 		
 		try {
 			req.getRequestDispatcher("/landing.jsp").forward(req, res);
