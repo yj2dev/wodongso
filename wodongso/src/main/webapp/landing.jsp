@@ -9,6 +9,7 @@
 <title>우동소</title>
 </head>
 <body>
+	<a href="index.jsp">메인으로</a>
 	<h3>우동소</h3>
 
 	<% 

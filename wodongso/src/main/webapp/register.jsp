@@ -8,6 +8,7 @@
 </head>
 <body>
 <!-- 수정시 name 값은 수정 불가 (코멘트 확인 후 제거) -->
+	<a href="index.jsp">메인으로</a>
 	<form action="register.do" method="post" name="registerForm" onsubmit="return onClickValidate();">
         <table>
             <tr>

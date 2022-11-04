@@ -7,6 +7,7 @@ public class CommandHandler {
 	HashMap<String, String> command = new HashMap<>();
 	
 	public CommandHandler() {
+		command.put("index", "controller.IndexCommand");
 		command.put("login", "controller.LoginCommand");
 		command.put("register", "controller.RegisterCommand");
 		command.put("findPassword", "controller.FindPasswordCommand");
