@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@import "reset.css";
+
+@import "Pages/Index/index.css";
+@import "Pages/Login/Login.css";
+@import "Pages/Register/Register.css";
