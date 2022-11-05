@@ -4,8 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Wodongso</title>
-		<link rel="stylesheet" href="resources/CSS/styles.css">
+		<title>우동소: 로그인</title>
+		<link rel="stylesheet" href="resources/CSS/styles.css?after">
 	</head>
 	<body>
 	
@@ -40,19 +40,23 @@
 					<div class="register-panel_content">
 						<h3>저희 사이트는 처음이신가요?</h3>
 						<p>저희 사이트가 처음이시면 아래의 회원가입 버튼을 눌러 동아리의 회원이 되주세요!</p>
-						<button class="register-btn register-btn_transparent" id="sign-up-btn">회원가입</button>
+						
+						 <a href="register.jsp">
+						 	<button class="register-btn register-btn_transparent">회원가입</button>
+						 </a>	
+						
 					</div>
 					
 					
 					<!-- 디자인을 위한 이미지 -->
-					<img src="resources/images/CommunicationClub.png" class="image">
+					<img src="resources/images/communication.png" class="register-panel_image">
 				</div>
 				
 			</div>
 			
 		</div>
 		
-		<!-- 폰트어썸 키 불러오 -->
+		<!-- 폰트어썸 킷 불러오기 -->
 		<script src="https://kit.fontawesome.com/b8a5c71661.js" crossorigin="anonymous"></script>
 		
 	</body>
